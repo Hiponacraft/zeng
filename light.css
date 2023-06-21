@@ -1,0 +1,136 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: inter, sans-serif;
+  background: #fffff;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: default;
+  overflow: hidden;
+  user-select: none;
+  animation: opacity 0.5s, 1.4s 0.5s bodyStart cubic-bezier(0, 0.5, 0.1, 1);
+}
+
+#logo img {
+  width: 35%;
+  margin: 0 auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+#logo:active img {
+  transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scale(0.9);
+}
+
+#logo img {
+  transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scale(1);
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#barra {
+  max-width: 800px;
+  width: 80%;
+  height: 30px;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0, 0.6, 0.4, 1);
+  overflow: hidden;
+}
+
+#barra:active {
+  transform: scale(0.95);
+}
+
+#barraOut {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(102, 102, 102);
+  transition: all 0.4s cubic-bezier(0, 0.5, 0.5, 1);
+  animation: opacity 0.5s, 0.5s 0.5s barraOutStart cubic-bezier(0.4, 0, 0.1, 1);
+}
+
+#barra:hover #barraOut {
+  background: rgba(80, 80, 80);
+}
+
+#barraIn {
+  width: 5%; /*EL PORCENTAJE 1*/
+  height: 100%;
+  border-radius: 15px;
+  background: #2c2c2c;
+  transition: all 0.4s cubic-bezier(0, 0.5, 0.5, 1);
+  animation: opacity 0.5s, 1.5s 0.5s barraInStart cubic-bezier(0.4, 0, 0.1, 1);
+}
+
+@keyframes bodyStart {
+  from {
+    transform: scale(0);
+    filter: blur(50px);
+  }
+  to {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes barraInStart {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5%; /*EL PORCENTAJE 2*/
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes barraOutStart {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+#barra:hover #barraIn {
+  background: #141414;
+  transform: scale(1.05);
+}
+#textContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 20%;
+}
+@keyframes linkStart {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+    pointer-events: none;
+  }
+}
